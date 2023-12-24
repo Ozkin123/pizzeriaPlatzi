@@ -3,6 +3,7 @@ package com.ozkin.platzi.pizzeria.persistence.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "pizza_order")
@@ -27,6 +28,14 @@ public class OrderEntity {
 
     @Column(name = "additional_notes",length = 200)
     private String additionalNotes;
+
+    @OneToOne
+    @JoinColumn(name = "id_costumer", referencedColumnName = "id_costumer", insertable = false, updatable = false)
+    private CostumerEntity costumer;
+
+    @OneToMany(mappedBy = "order")
+    private List<OrderItemEntity> items;
+
 
 
 
