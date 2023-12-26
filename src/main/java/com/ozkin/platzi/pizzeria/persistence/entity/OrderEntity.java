@@ -14,7 +14,7 @@ public class OrderEntity {
     @Column(name = "id_order", nullable = false)
     private Integer idOrder;
 
-    @Column(name = "id_costumer", nullable = false, length = 15)
+    @Column(name = "id_customer", nullable = false, length = 15)
     private String idCostumer;
 
     @Column(nullable = false, columnDefinition = "DATETIME")
@@ -30,8 +30,8 @@ public class OrderEntity {
     private String additionalNotes;
 
     @OneToOne
-    @JoinColumn(name = "id_costumer", referencedColumnName = "id_costumer", insertable = false, updatable = false)
-    private CostumerEntity costumer;
+    @JoinColumn(name = "id_customer", referencedColumnName = "id_customer", insertable = false, updatable = false)
+    private CostumerEntity customer;
 
     @OneToMany(mappedBy = "order")
     private List<OrderItemEntity> items;

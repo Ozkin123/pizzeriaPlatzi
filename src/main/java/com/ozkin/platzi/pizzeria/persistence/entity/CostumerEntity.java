@@ -13,7 +13,7 @@ import lombok.Setter;
 public class CostumerEntity {
 
     @Id
-    @Column(name = "id_costumer", nullable = false, length = 15)
+    @Column(name = "id_customer", nullable = false, length = 15)
     private String costumerID;
 
     @Column(nullable = false , length = 60)
@@ -25,5 +25,5 @@ public class CostumerEntity {
     @Column(nullable = false, length = 50,unique = true)
     private String email;
     @Column(name = "phone_number", length = 20)
-    private Integer phoneNumber;
+    private String phoneNumber;
 }
