@@ -13,12 +13,11 @@ public class PizzaService {
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public PizzaService(JdbcTemplate jdbcTemplate){
+    public PizzaService(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<PizzaEntity> getAll(){
-        return this.jdbcTemplate.query("SELECT * FROM pizza", new BeanPropertyRowMapper<>(PizzaEntity.class));
+    public List<PizzaEntity> getAll() {
+        return this.jdbcTemplate.query("SELECT * FROM pizza WHERE available = 0", new BeanPropertyRowMapper<>(PizzaEntity.class));
     }
-
 }

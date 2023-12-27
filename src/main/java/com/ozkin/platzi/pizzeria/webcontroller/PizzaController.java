@@ -22,6 +22,6 @@ public class PizzaController {
 
     @GetMapping()
     public ResponseEntity<List<PizzaEntity>> getAll(){
-        return ResponseEntity.ok(pizzaService.getAll());
+        return ResponseEntity.ok(this.pizzaService.getAll());
     }
 }
