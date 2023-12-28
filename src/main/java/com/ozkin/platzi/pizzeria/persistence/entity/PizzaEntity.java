@@ -14,7 +14,7 @@ public class PizzaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_pizza", nullable = false,columnDefinition = "INT(11)")
+    @Column(name = "id_pizza", nullable = false)
     private Integer pizzaId;
 
     @Column(nullable = false,length = 30, unique = true)
@@ -34,6 +34,5 @@ public class PizzaEntity {
 
     @Column(columnDefinition = "TINYINT", nullable = false)
     private Boolean available;
-
 
 }
