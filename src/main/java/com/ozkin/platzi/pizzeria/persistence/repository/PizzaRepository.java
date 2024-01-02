@@ -7,8 +7,12 @@ import java.util.List;
 
 public interface PizzaRepository extends ListCrudRepository<PizzaEntity,Integer> {
 
-    List<PizzaEntity> findByAllAvailableTrueOrderByPrice();
+    List<PizzaEntity> findAllByAvailableTrueOrderByPrice();
 
-    PizzaEntity findByAllByAvailableTrueAndNameIgnoreCase(String name);
+    PizzaEntity findAllByAvailableTrueAndNameIgnoreCase(String name);
+
+    List<PizzaEntity> findAllByAvailableTrueAndDescriptionContainIgnoreCase(String description);
+
+    List<PizzaEntity> findAllByAvailableTrueAndDescriptionNotContainIgnoreCase(String description);
 
 }
