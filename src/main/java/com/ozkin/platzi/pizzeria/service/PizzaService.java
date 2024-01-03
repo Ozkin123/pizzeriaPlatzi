@@ -23,7 +23,8 @@ public class PizzaService {
     }
 
     public List<PizzaEntity> getAvailable(){
-       return this.pizzaRepository.findAllByAvailableTrueOrderByPrice();
+        this.pizzaRepository.countByVeganTrue();
+        return this.pizzaRepository.findAllByAvailableTrueOrderByPrice();
     }
 
     public List<PizzaEntity> getWith(String ingredient){
