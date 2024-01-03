@@ -38,6 +38,11 @@ public class PizzaController {
         return ResponseEntity.ok(this.pizzaService.getWithOut(ingredient));
     }
 
+    @GetMapping("/cheapest/{price}")
+    public ResponseEntity<List<PizzaEntity>> getWithOut(@PathVariable double price){
+        return ResponseEntity.ok(this.pizzaService.getCheapest(price));
+    }
+
     @GetMapping("/Available")
     public ResponseEntity<List<PizzaEntity>> getAvailable(){
         return ResponseEntity.ok(this.pizzaService.getAvailable());
