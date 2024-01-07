@@ -40,9 +40,10 @@ public class OrderEntity {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_customer", referencedColumnName = "id_customer", insertable = false, updatable = false)
     @JsonIgnore
-    private CostumerEntity customer;
+    private CustomerEntity customer;
 
     @OneToMany(mappedBy = "order",fetch = FetchType.EAGER)
+    @OrderBy("price ASC")
     private List<OrderItemEntity> items;
 
 

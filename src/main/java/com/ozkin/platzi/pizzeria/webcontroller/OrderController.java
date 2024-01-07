@@ -4,9 +4,7 @@ package com.ozkin.platzi.pizzeria.webcontroller;
 import com.ozkin.platzi.pizzeria.persistence.entity.OrderEntity;
 import com.ozkin.platzi.pizzeria.service.OrderService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,5 +30,10 @@ public class OrderController {
     @GetMapping("/outside")
     public ResponseEntity<List<OrderEntity>> getOutsideOrders(){
         return ResponseEntity.ok(this.orderService.getOutisideOrders());
+    }
+
+    @GetMapping("/customers/{id}")
+    public ResponseEntity<List<OrderEntity>> getOrdersCustomer(@PathVariable String id){
+        return ResponseEntity.ok(this.orderService.getCustomerOrders(id));
     }
 }

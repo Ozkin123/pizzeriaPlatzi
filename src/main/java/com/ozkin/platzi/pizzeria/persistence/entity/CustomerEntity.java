@@ -14,7 +14,7 @@ public class CustomerEntity {
 
     @Id
     @Column(name = "id_customer", nullable = false, length = 15)
-    private String costumerID;
+    private String customerID;
 
     @Column(nullable = false , length = 60)
     private String name;
