@@ -8,6 +8,7 @@ import org.springframework.data.repository.ListCrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 public interface PizzaRepository extends ListCrudRepository<PizzaEntity,Integer> {
